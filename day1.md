@@ -7,6 +7,42 @@
 
 
 1.[4A Watermelon (implementation, 800)](https://codeforces.com/problemset/problem/4/A​)
+**LOGIC:** *notihing complex just even odd logic*
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    if(n < 4) {
+        cout << "NO" << endl;
+        return 0;
+    }
+    if(n%2)
+        cout<<"NO"<<endl;
+    else
+        cout<<"YES"<<endl;
+    return 0;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 **Codeforces Problem Selection**
