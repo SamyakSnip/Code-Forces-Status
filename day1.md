@@ -1,9 +1,13 @@
 #### Week 1 – Arrays, Two Pointers, Sliding Window
 
-**Topics**
+**Topics to complete**
 - Arrays, prefix sums.
 - Two pointers, sliding window.
 - Simple implementation and math.
+
+
+1.[4A Watermelon (implementation, 800)](https://codeforces.com/problemset/problem/4/A​)
+
 
 **Codeforces Problem Selection**
 - Daily total: **6–8 problems**.
