@@ -6,6 +6,7 @@
 - Simple implementation and math.
 
 ***Problems to get you started and help you get fimiliar with how cf works***
+
 1.[4A Watermelon (implementation, 800)](https://codeforces.com/problemset/problem/4/A​)
 
 **LOGIC:** 
@@ -30,7 +31,8 @@ int main() {
 
 2.[71A Way Too Long Words (implementation, 800)](https://codeforces.com/problemset/problem/71/A​)
 
-**LOGIC** ** *string length*
+**LOGIC** ** 
+  - *string length*
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -87,6 +89,7 @@ int main() {
 using namespace std;
 int main() {
     int t;
+    cin>>n;
     while (t--)
     {
         int n;
@@ -113,6 +116,99 @@ int main() {
 }
 ```
 
+5.[118A String Task (strings/implementation, 1000)](https://codeforces.com/problemset/problem/118/A​)
+
+**LOGIC**
+  - *just print .c i it s a consonent c = character of string*
+  - *learned how to convert the entire sting to upper to lower case*
+```cpp
+transform(s.begin(), s. end(), s.begin(), ::tolower);
+```
+  - *::tolower or toupper is used to change the letter*
+  - *we can use transform to make ever more changes to any array*
+  - *example: here we ar increasing each int by 1*
+    ```cpp
+    transform(v1.begin(), v1.end(), v2.begin(),
+              [](int a) { 
+                return a + 1;
+              });
+    ```
+  - **in first part begin to end is for v1 and then we store it in v2
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s;
+    cin>>s;
+    transform(s.begin(), s. end(), s.begin(), ::tolower);
+    for(int i = 0; i < s.length(); i++) {
+        if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'y') {
+            continue;
+        } else {
+            cout<<"."<<s[i];
+        }
+    }
+    
+    return 0;
+}
+```
+
+
+6.[977C Less or Equal (two pointers/prefix, 1000)](https://codeforces.com/problemset/problem/977/C)
+
+**LOGIC**
+  - *confusing language but simple*
+  - *sort array and x = kth element in*
+  - *if k+1th element is same as kth element then there is one more element*
+  - *so insted of k element we have k+1 element so return -1*
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, k;
+    cin >> n >> k;
+
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    sort(a.begin(), a.end());
+
+    if (k == 0) {
+        if (a[0] == 1) {
+            cout << -1;
+        } else {
+            cout << 1;
+        }
+        return 0;
+    }
+
+    long long x = a[k - 1];
+
+    if (k < n && a[k] == x) {
+        cout << -1;
+    } else {
+        cout << x;
+    }
+
+    return 0;
+}
+
+<!-- 
+
+
+**LOGIC**
+  - **
+```cpp
+
+
+``` -->
 
 
 
@@ -126,11 +222,7 @@ int main() {
 
 
 
-
-
-
-
-**Codeforces Problem Selection**
+<!-- **Codeforces Problem Selection**
 - Daily total: **6–8 problems**.
 - Difficulty bands:
   - 3–4 problems in **800–1000** with tags: `implementation`, `two pointers`, `greedy`.
@@ -146,4 +238,4 @@ int main() {
 
 **Success Criteria**
 - Comfortable recognizing two-pointer/sliding-window patterns.
-- Can implement them with almost no bugs.
+- Can implement them with almost no bugs. -->
