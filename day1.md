@@ -121,9 +121,9 @@ int main() {
 **LOGIC**
   - *just print .c i it s a consonent c = character of string*
   - *learned how to convert the entire sting to upper to lower case*
-```cpp
-transform(s.begin(), s. end(), s.begin(), ::tolower);
-```
+    ```cpp
+    transform(s.begin(), s. end(), s.begin(), ::tolower);
+    ```
   - *::tolower or toupper is used to change the letter*
   - *we can use transform to make ever more changes to any array*
   - *example: here we ar increasing each int by 1*
@@ -153,7 +153,6 @@ int main() {
     return 0;
 }
 ```
-
 
 6.[977C Less or Equal (two pointers/prefix, 1000)](https://codeforces.com/problemset/problem/977/C)
 
@@ -199,6 +198,58 @@ int main() {
 
     return 0;
 }
+```
+
+1840C Ski Resort (two pointers/prefix, 1000) https://codeforces.com/problemset/problem/1840/C​
+
+**LOGIC**
+  - *it was simple just use the sum integers n(n+1)/2 formula*
+  - *since we can minimum for k days we skip sub array < k*
+  - *and for subarray > k we simply get the formula n = L-k*
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        long long q;
+        cin >> n >> k >> q;
+
+        vector<long long> a(n);
+        for (int i = 0; i < n; i++) cin >> a[i];
+
+        long long ans = 0;
+        long long L = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (a[i] <= q) {
+                L++;
+            } else {
+                if (L >= k) {
+                    long long x = L - k + 1;
+                    ans += x * (x + 1) / 2;
+                }
+                L = 0;
+            }
+        }
+
+        if (L >= k) {
+            long long x = L - k + 1;
+            ans += x * (x + 1) / 2;
+        }
+
+        cout << ans << "\n";
+    }
+}
+
+``` 
+
 
 <!-- 
 
@@ -206,9 +257,10 @@ int main() {
 **LOGIC**
   - **
 ```cpp
+``` 
 
 
-``` -->
+-->
 
 
 
