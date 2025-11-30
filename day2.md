@@ -428,3 +428,95 @@ int main() {
 - Basic string operations, frequency counts.
 - Binary search patterns (answer search, boundary finding).
 - Intro string hashing (conceptual).
+
+#### Hashing
+**hashing is a technique to map data of any size to a fixed-size value (a hash code) using a hash function, which allows for fast storage and retrieval of elements in a hash table. This enables average O(1) time complexity for operations like insertion, deletion, and searching, making it ideal for problems involving sets or dictionaries**
+
+*[hashin example](https://www.geeksforgeeks.org/competitive-programming/hashing-in-competitive-programming/)*
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+struct gfg_custom_hash {
+    static uint64_t splitmix64(uint64_t key)
+    {
+        key += 0x9e3779b97f4a7c15;
+        key = (key ^ (key >> 30)) * 0xbf58476d1ce4e5b9;
+        key = (key ^ (key >> 27)) * 0x94d049bb133111eb;
+        return key ^ (key >> 31);
+    }
+
+    // function to make the hash function non-deterministic
+    size_t operator()(uint64_t x) const
+    {
+        static const uint64_t RANDOM
+            = chrono::steady_clock::now()
+                  .time_since_epoch()
+                  .count();
+        return splitmix64(x + RANDOM);
+    }
+};
+
+int main()
+{
+    // Passing the custom hash function for the
+    // unordered map
+    unordered_map<long long, int, gfg_custom_hash> mp;
+    mp[1] = 10;
+    mp[2] = 20;
+    for (auto ele : mp) {
+        cout << ele.first << " " << ele.second << "\n";
+    }
+
+    // Passing the custom hash function for the
+    // unordered set
+    unordered_set<long long, gfg_custom_hash> st;
+    st.insert(1);
+    st.insert(2);
+    for (auto ele : st)
+        cout << ele << " ";
+    cout << "\n";
+
+    return 0;
+}
+```
+
+### Strings & Implementation (900-1100)
+
+
+<!-- 
+
+**LOGIC**
+    - **
+```cpp
+```
+
+
+ -->
+
+1.[200A Tech Support - String scan, character frequency chec]()
+
+**LOGIC**
+    - **
+```cpp
+```
+
+339A Helpful Maths - String splitting and sorting
+
+
+### Binary Search & Monotonic Condition (1100-1300)
+
+
+2156B Strange Machine - Binary search on answer
+
+1547B Alphabetical Strings - Binary search with string conditions
+
+1489B Minimum Number of Moves - Greedy + binary search
+
+1097B Petr and a Combination Lock - Binary search combined with geometry
+
+792B Counting-out Rhyme - Using monotonic conditions in simulation
+
+1051B Relatively Prime Pairs - Number theory + binary search
+
+473B Worms - Binary searching in prefix sums
